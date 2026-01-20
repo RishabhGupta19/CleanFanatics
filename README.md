@@ -218,9 +218,38 @@ npm run dev
 
 ---
 
+```bash
+# Design Decisions ───────────────────────────────
+- Feature-based backend modules
+- Backend-driven business rules
+- Finite state machine for bookings
+- Plain REST (no WebSockets)
+
+# Trade-offs ─────────────────────────────────────
+- Simulated pricing (no real gateway)
+- Poll-based refresh (no realtime)
+- Manual provider assignment by admin
+
+# Assumptions ────────────────────────────────────
+- 1 provider per booking
+- Providers can reject independently
+- Admin has ultimate control
+- Prices are fixed/predefined
+
+# Future Improvements ────────────────────────────
+- WebSockets / SSE for live updates
+- Automatic provider matching
+- Real payment integration
+- Refresh tokens + rate limiting
+- Unit + integration test suite
+
 ## 14. Author
 
 Rishabh Gupta  
 Full Stack Developer (MERN)
+Connect :
+rishabh134we@gmail.com
+7896751316
+www.rishabhs.xyz
 
 This project reflects real production-style decision making and system design.

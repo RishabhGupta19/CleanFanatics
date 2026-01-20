@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ * HomeServe Pro - Professional Corporate Design System
+ * All colors defined in HSL format for consistency
+ */
+
+@layer base {
+  :root {
+    /* Background & Foreground */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    /* Card surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    /* Popover surfaces */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Deep Corporate Blue */
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary - Professional Slate */
+    --secondary: 215 16% 47%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted backgrounds */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Teal for CTAs and highlights */
+    --accent: 168 84% 34%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
+
+    --info: 199 89% 48%;
+    --info-foreground: 210 40% 98%;
+
+    /* Borders & Inputs */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 221 83% 53%;
+
+    /* Custom gradients and shadows */
+    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(199 89% 48%));
+    --gradient-accent: linear-gradient(135deg, hsl(168 84% 34%), hsl(142 76% 36%));
+    --shadow-soft: 0 2px 8px -2px hsl(222 47% 11% / 0.1);
+    --shadow-medium: 0 4px 16px -4px hsl(222 47% 11% / 0.15);
+    --shadow-large: 0 8px 32px -8px hsl(222 47% 11% / 0.2);
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 215 20% 65%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 168 76% 42%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 70% 40%;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
+
+    --info: 199 89% 48%;
+    --info-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 217 91% 60%;
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  /* Custom scrollbar for professional look */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--info)));
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--success)));
+  }
+
+  .shadow-soft {
+    box-shadow: 0 2px 8px -2px hsl(var(--foreground) / 0.1);
+  }
+
+  .shadow-medium {
+    box-shadow: 0 4px 16px -4px hsl(var(--foreground) / 0.15);
+  }
+
+  .shadow-large {
+    box-shadow: 0 8px 32px -8px hsl(var(--foreground) / 0.2);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}

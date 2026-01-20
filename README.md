@@ -62,17 +62,23 @@ Frontend (React)
 → Express Controllers
 → Services & Business Logic
 → MongoDB (Mongoose Models)
-
-┌────────────┐        ┌──────────────┐
-│  Frontend  │  API   │   Backend    │
-│  (React)   ├──────▶│  (Express)   │
-└────────────┘        └──────┬───────┘
-                             │
-                      ┌──────▼───────┐
-                      │   MongoDB    │
-                      │  (Bookings, │
-                      │   Users)    │
-                      └─────────────┘
+┌──────────────────────┐
+│      Frontend        │
+│     (React + Vite)   │
+└───────────┬──────────┘
+│ REST + JSON
+▼
+┌──────────────────────┐
+│     Backend          │
+│   (Express + TS)     │
+└───────────┬──────────┘
+│
+▼
+┌──────────────────────┐
+│      MongoDB         │
+│  (Users, Bookings,   │
+│   Service Types)     │
+└──────────────────────┘
 
 
 The backend is stateless and secured using JWT.

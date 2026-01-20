@@ -63,6 +63,18 @@ Frontend (React)
 → Services & Business Logic
 → MongoDB (Mongoose Models)
 
+┌────────────┐        ┌──────────────┐
+│  Frontend  │  API   │   Backend    │
+│  (React)   ├──────▶│  (Express)   │
+└────────────┘        └──────┬───────┘
+                             │
+                      ┌──────▼───────┐
+                      │   MongoDB    │
+                      │  (Bookings, │
+                      │   Users)    │
+                      └─────────────┘
+
+
 The backend is stateless and secured using JWT.
 
 ---
@@ -109,39 +121,9 @@ Additional admin-only states:
 Provider rejection does NOT cancel a booking.  
 It only removes that booking from the rejecting provider’s view.
 
----
 
-## 6. Backend Folder Structure
 
-src/
-├── app.ts
-├── server.ts
-├── config/
-│   ├── db.ts
-│   ├── roles.ts
-├── modules/
-│   ├── auth/
-│   ├── bookings/
-│   │   ├── booking.model.ts
-│   │   ├── booking.controller.ts
-│   │   ├── booking.routes.ts
-│   │   ├── booking.transitions.ts
-│   │   ├── booking.types.ts
-│   ├── providers/
-│   ├── serviceTypes/
-├── middleware/
-│   ├── auth.middleware.ts
-│   ├── role.middleware.ts
-│   ├── error.middleware.ts
-├── utils/
-│   ├── jwt.ts
-│   ├── logger.ts
-└── types/
-    └── express.d.ts
-
----
-
-## 7. Authentication & Authorization
+## 6. Authentication & Authorization
 
 Authentication is handled using JWT.
 
